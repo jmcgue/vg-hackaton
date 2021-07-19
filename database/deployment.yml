@@ -17,6 +17,8 @@ spec:
         image: mariadb:latest
         env:
           - name: MARIADB_ROOT_PASSWORD
-            value: jhordycg  
+            value: jhordycg
+          - name: MARIADB_DATABASE
+            value: h21_01bd 
         ports:
         - containerPort: 8080

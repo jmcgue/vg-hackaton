@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasources
+  namespace: monitoring
+
+data:
+  prometheus.yml: |-
+    apiVersion: 1
+    datasources:
+      - uid: uid_prometheus
+        editable: true
+        name: Prometheus Metrics
+        type: prometheus
+        access: proxy
+        httpMethod: POST
+        url: http://prometheus-service.monitoring.svc:8280
