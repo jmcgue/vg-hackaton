@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payara
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payara
+  template:
+    metadata:
+      labels:
+        app: payara
+    spec:
+      containers:
+      - name: payara
+        image: payara/server-web:latest
+        ports:
+        - containerPort: 8080
